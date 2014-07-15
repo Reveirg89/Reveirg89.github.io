@@ -133,13 +133,13 @@ function load_accessory(sx,sy,sz)
 
     var $video = $('#video');
     var video = $video[0];
-    var texture = new THREE.Texture(video);
-    texture.minFilter = THREE.LinearFilter;
-    texture.magFilter = THREE.LinearFilter;
-    texture.format = THREE.RGBFormat;
-    texture.generateMipmaps = false;
+    var videotexture = new THREE.Texture(video);
+    videotexture.minFilter = THREE.LinearFilter;
+    videotexture.magFilter = THREE.LinearFilter;
+    videotexture.format = THREE.RGBFormat;
+    videotexture.generateMipmaps = false;
   
-  var movieMaterial = new THREE.MeshBasicMaterial( { map: texture} );
+  var movieMaterial = new THREE.MeshBasicMaterial( { map: videotexture} );
   var movieGeometry = new THREE.PlaneGeometry( 1.4, 0.77, 4, 4 );
   var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
   movieScreen.position.set(6.5*sx,1.03*sy,0.94*sz);
@@ -158,7 +158,7 @@ function load_accessory(sx,sy,sz)
       this.movieScreen.video.play();
     }
   }
-  oggetti.push(movieScreen);
+ // oggetti.push(movieScreen);
  
 
     var wc = load_model("/wc/wc",0.15*sx,0.2*sy,0.2*sz,0xffffff);
@@ -263,7 +263,7 @@ function load_accessory(sx,sy,sz)
       arredo.add(freezer);
 
       arredo.add(movieScreen);
-      arredo.videoTexture = texture;
+      arredo.videoTexture = videotexture;
 
       arredo.add(frame);
       arredo.add(ca);
