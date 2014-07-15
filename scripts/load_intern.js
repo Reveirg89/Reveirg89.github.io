@@ -152,12 +152,12 @@ var	video = document.createElement( 'video' );
   {
     if (this.isOn)
     {
-      this.movieScreen.video.pause();
-      this.movieScreen.video.currentTime = 0;
+      this.video.pause();
+      this.video.currentTime = 0;
     }
     else
     {
-      this.movieScreen.video.play();
+      this.video.play();
     }
   }
  // oggetti.push(movieScreen);
@@ -266,6 +266,7 @@ var	video = document.createElement( 'video' );
 
       arredo.add(movieScreen);
       arredo.videoTexture = videotexture;
+      arredo.movieScreen = movieScreen;
 
       arredo.add(frame);
       arredo.add(ca);
