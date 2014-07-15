@@ -9,7 +9,7 @@ function load_models(sx,sy,sz)
 { 
     var loader = new THREE.OBJLoader();
     var home = new THREE.Object3D();
-    loader.load("lar-models/ing1.obj", function (obj) {
+    loader.load("scripts/lar-models/ing1.obj", function (obj) {
     global_o = obj;
     var material = new THREE.MeshLambertMaterial({color: 0xffffff, side: THREE.DoubleSide, transparent:true});
     ing1 = new THREE.Mesh(obj.children[0].geometry, material);
@@ -20,7 +20,7 @@ function load_models(sx,sy,sz)
       });
 
     var ing2;
-    loader.load("./lar-models/ing2.obj", function (obj) {
+    loader.load("scripts/lar-models/ing2.obj", function (obj) {
 
         global_o = obj;
 
@@ -32,7 +32,7 @@ function load_models(sx,sy,sz)
       });
 
      var bath;
-     loader.load("./lar-models/bath.obj", function (obj) {
+     loader.load("scripts/lar-models/bath.obj", function (obj) {
 
         global_o = obj;
 
@@ -44,7 +44,7 @@ function load_models(sx,sy,sz)
       });
 
      var bed1;
-     loader.load("./lar-models/bed1.obj", function (obj) {
+     loader.load("scripts/lar-models/bed1.obj", function (obj) {
 
         global_o = obj;
 
@@ -56,7 +56,7 @@ function load_models(sx,sy,sz)
       });
 
      var bed2;
-     loader.load("./lar-models/bed2.obj", function (obj) {
+     loader.load("scripts/lar-models/bed2.obj", function (obj) {
 
         global_o = obj;
 
@@ -68,7 +68,7 @@ function load_models(sx,sy,sz)
       });
 
      var bed3;
-     loader.load("./lar-models/bed3.obj", function (obj) {
+     loader.load("scripts/lar-models/bed3.obj", function (obj) {
 
         global_o = obj;
 
@@ -80,7 +80,7 @@ function load_models(sx,sy,sz)
       });
 
      var kit;
-     loader.load("./lar-models/kitchen.obj", function (obj) {
+     loader.load("scripts/lar-models/kitchen.obj", function (obj) {
 
         global_o = obj;
 
@@ -92,7 +92,7 @@ function load_models(sx,sy,sz)
       });
 
      var sal;
-     loader.load("./lar-models/saloon.obj", function (obj) {
+     loader.load("scripts/lar-models/saloon.obj", function (obj) {
 
         global_o = obj;
 
@@ -104,7 +104,7 @@ function load_models(sx,sy,sz)
       });
 
      var bal;
-     loader.load("./lar-models/balcone.obj", function (obj) {
+     loader.load("scripts/lar-models/balcone.obj", function (obj) {
 
         global_o = obj;
 
