@@ -131,9 +131,11 @@ function load_accessory(sx,sy,sz)
     tv.rotation.y = Math.PI/2;
     tv.position.set(6.5*sx,0.98*sy,0.9*sz);
 
-    var $video = $('#video');
-    var video = $video[0];
-    video.pause();
+    	// create the video element
+var	video = document.createElement( 'video' );
+	video.src = "scripts/videos/Roma-Parma.ogv";
+	video.load(); 
+	video.play();
     var videotexture = new THREE.Texture(video);
     videotexture.minFilter = THREE.LinearFilter;
     videotexture.magFilter = THREE.LinearFilter;
@@ -151,11 +153,10 @@ function load_accessory(sx,sy,sz)
     if (this.isOn)
     {
       this.movieScreen.video.pause();
-      this.movieScreen.video.hide();
+      this.movieScreen.video.currentTime = 0;
     }
     else
     {
-      this.movieScreen.video.show();
       this.movieScreen.video.play();
     }
   }
