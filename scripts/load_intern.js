@@ -135,7 +135,7 @@ function load_accessory(sx,sy,sz)
 var	video = document.createElement( 'video' );
 	video.src = "scripts/videos/Roma-Parma.ogv";
 	video.load(); 
-	video.play();
+//	video.play();
     var videotexture = new THREE.Texture(video);
     videotexture.minFilter = THREE.LinearFilter;
     videotexture.magFilter = THREE.LinearFilter;
@@ -152,12 +152,16 @@ var	video = document.createElement( 'video' );
   {
     if (this.isOn)
     {
+      console.log("acceso");
       this.video.pause();
       this.video.currentTime = 0;
+      this.isOn = false;
     }
     else
     {
+      console.log("spento");
       this.video.play();
+      this.isOn = true;
     }
   }
   oggetti.push(movieScreen);
