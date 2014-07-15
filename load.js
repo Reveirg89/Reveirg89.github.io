@@ -130,10 +130,11 @@ function load_models(sx,sy,sz)
       walls.rotation.y = -Math.PI/2;
       walls.position.set(11,9,0);
       home.scale.set(sx,sy,sz);
+      home.walls = walls;
+
       home.add(walls);
       home.add(floors);
       home.position.set(home.position.x * sx,home.position.y,home.position.z*sz);
-   //   floors.scale.set(10,10,10);
       var arredo = new THREE.Object3D();
       arredo = load_accessory(1,1,1);
       arredo.position.set(11,9,0);

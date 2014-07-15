@@ -191,8 +191,8 @@ this.opacityTween = new Tween();
 this.blendStyle = THREE.NormalBlending; // false;
 
 this.particleArray = [];
-this.particlesPerSecond = 100;
-this.particleDeathAge = 1.0;
+this.particlesPerSecond = 1000;
+this.particleDeathAge = 10.0;
 
 ////////////////////////
 // EMITTER PROPERTIES //
@@ -236,7 +236,11 @@ this.particleMesh = new THREE.Mesh();
 
 ParticleEngine.prototype.setValues = function( parameters )
 {
-if ( parameters === undefined ) return;
+if ( parameters === undefined ) 
+	{
+		console.log("valore nullo");
+		return;
+	}	
 
 // clear any previous tweens that might exist
 this.sizeTween = new Tween();
@@ -360,6 +364,7 @@ this.particleMesh = new THREE.ParticleSystem( this.particleGeometry, this.partic
 this.particleMesh.dynamic = true;
 this.particleMesh.sortParticles = true;
 scene.add( this.particleMesh );
+return this.particleMesh;
 }
 
 ParticleEngine.prototype.update = function(dt)

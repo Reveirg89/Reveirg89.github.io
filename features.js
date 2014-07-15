@@ -87,7 +87,7 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
                 materialArray[5].bumpScale = 0.1;
             }
             var faceMaterial = new THREE.MeshFaceMaterial(materialArray);
-            // create a multimaterial
+            
             var picture = new THREE.Mesh(geom, faceMaterial);
             return picture;
       }
@@ -120,7 +120,7 @@ function createMesh(geom, imageFile, bump,repx,repy) {
                 materialArray[2].bumpScale = 0.1;
             }
             var faceMaterial = new THREE.MeshFaceMaterial(materialArray);
-            // create a multimaterial
+           
             var picture = new THREE.Mesh(geom, faceMaterial);
             return picture;
       }
@@ -157,7 +157,6 @@ function createWindow(hight,width,length,texture_infix,opener)
     cardin4.position.set(length/2,0,-(hight/2+l_cardini/2));
     var window1 = new THREE.Object3D();
  
- //   window1.position.y = window1.position.y + l_cardini;
     window1.rotation.y = Math.PI;
 
     window1.rotation.z = Math.PI/2;
@@ -171,19 +170,15 @@ function createWindow(hight,width,length,texture_infix,opener)
     intern.position.x = intern.position.x + l_cardini;
 
     var pivot = new THREE.Object3D();
-   //   pivot.position.set(0,l_cardini,0);
       
       
      pivot.add(window1);
      intern.pivot=pivot;
      window1.position.set(0,-length,0);
      intern.position.x = intern.position.x + l_window/2;
-    //  window1.position.set(0,-2/3*hight,0);
-   //   intern.pivot = pivot;
    var w = new THREE.Object3D();
    w.add(pivot);
    w.intern = intern;
- //  pivot.position.set(0,-hight/2,0);
       intern.isclosed = true;
       if(opener)
       {
@@ -209,7 +204,6 @@ function createWindow(hight,width,length,texture_infix,opener)
         }
       }
       oggetti.push(intern);
- //     pivot.rotation.z = -Math.PI/8;
       return w;
 }
      
@@ -338,7 +332,7 @@ function create_sportello(h,w,l,left,texture,texture_wardrobe,bump)
     materialArray[1].bumpScale = 0.1;
 }
 var faceMaterial = new THREE.MeshFaceMaterial(materialArray);
-// create a multimaterial
+
 var sportello = new THREE.Mesh(boxGeometry, faceMaterial);
 
   var hook = new THREE.Object3D();
@@ -522,12 +516,11 @@ function create_cassetto_cassettiera(h,w,l,texture_cassetto,texture, texture_int
   d.cassetto = cassetto;
 
   c1.position.set(0,0,-l_cassetto2/2+l_cassetto1/2);
-//  c1.rotation.x = Math.PI/2;
+
   c2.position.set(0,0,+l_cassetto2/2-l_cassetto1/2);
- // c2.rotation.x = Math.PI/2;
- // c3.rotation.z = Math.PI/2;
+ 
   c3.position.set(+width/2,0,0);
- // d.rotation.z = Math.PI/2;
+ 
   d.position.set(-width/2,0,0);
   cs.position.set(0,-h/2+h/40,0);
   d.isOpen = false

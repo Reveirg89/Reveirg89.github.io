@@ -85,8 +85,8 @@ function load_accessory(sx,sy,sz)
 
       var interruttore_bed2 = create_interructor(sx/2,sy/2,sz/2);
       interruttore_bed2.rotation.y = Math.PI/2;
-      interruttore_bed2.position.set(4.105*sx,1*sy,5*sz);
-      interruttore_bed2.light.position.set(-1*sx,2*sy,2*sz);
+      interruttore_bed2.position.set(4.105*sx,1.5*sy,5*sz);
+      interruttore_bed2.light.position.set(-1*sx,1.5*sy,2*sz);
 
       var interruttore_bed3 = create_interructor(sx/2,sy/2,sz/2);
       interruttore_bed3.position.set(2*sx,1*sy,5.105*sz);
@@ -130,6 +130,36 @@ function load_accessory(sx,sy,sz)
     var tv = load_model("/tv/tv",0.3*sx,0.3*sy,0.3*sz,0xffffff);
     tv.rotation.y = Math.PI/2;
     tv.position.set(6.5*sx,0.98*sy,0.9*sz);
+
+    var $video = $('#video');
+    var video = $video[0];
+    var texture = new THREE.Texture(video);
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    texture.format = THREE.RGBFormat;
+    texture.generateMipmaps = false;
+  
+  var movieMaterial = new THREE.MeshBasicMaterial( { map: texture} );
+  var movieGeometry = new THREE.PlaneGeometry( 1.4, 0.77, 4, 4 );
+  var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
+  movieScreen.position.set(6.5*sx,1.03*sy,0.94*sz);
+  movieScreen.isOn = false;
+  movieScreen.video = video;
+  movieScreen.interact = function()
+  {
+    if (this.isOn)
+    {
+      this.movieScreen.video.pause();
+      this.movieScreen.video.hide();
+    }
+    else
+    {
+      this.movieScreen.video.show();
+      this.movieScreen.video.play();
+    }
+  }
+  oggetti.push(movieScreen);
+ 
 
     var wc = load_model("/wc/wc",0.15*sx,0.2*sy,0.2*sz,0xffffff);
     wc.rotation.y = -Math.PI/2;
@@ -208,7 +238,7 @@ function load_accessory(sx,sy,sz)
       var texture = THREE.ImageUtils.loadTexture("assets/textures/general/panorama.jpg");
       var material = new THREE.MeshPhongMaterial({ map: texture, side: THREE.BackSide });
 
-   //   var env = new THREE.Mesh(geometry, material);
+      var env = new THREE.Mesh(geometry, material);
 
       var mirror = createMirror(0.5*sx,0.005*sy,0.8*sz);
       mirror.position.set(3*sx,1.9*sy,2.205*sz);
@@ -232,9 +262,12 @@ function load_accessory(sx,sy,sz)
       arredo.add(plant);
       arredo.add(freezer);
 
+      arredo.add(movieScreen);
+      arredo.videoTexture = texture;
+
       arredo.add(frame);
       arredo.add(ca);
-   //   arredo.add(env);
+      arredo.add(env);
       arredo.add(mirror);
 
       arredo.add(w_machine);

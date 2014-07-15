@@ -242,54 +242,54 @@ function load_walls()
       hole = [1.05,0.15,2.05,0.15,2.05,2.1,1.05,2.1,1.05,0.15];
       holes = new Array();
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",3,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",3,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(1,0,1.995);
       walls.add(wall);
 
       holes = new Array();
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",3,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",3,3);
       wall.position.set(1,0,1.995);
       walls.add(wall);
 
       hole = [0.8,1.1,2.2,1.1,2.2,2.6,0.8,2.6,0.8,1.1];
       holes = new Array();
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",3,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",3,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(8.005,0,8.005);
       walls.add(wall);
 
       vertex = [0,0,1,0,1,3.1,0,3.1,0,0];
       holes = new Array();
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",1,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",1,3);
       wall.position.set(0,0,4.995);
       walls.add(wall);
 
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",1,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",1,3);
       wall.position.set(0,0,7);
       walls.add(wall);
 
       vertex = [0,0,2,0,2,3.1,0,3.1,0,0];
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",2,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",2,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(4,0,-0.005);
       walls.add(wall);
 
       vertex = [0,0,5,0,5,3.1,0,3.1,0,0];
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",5,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",5,3);
       wall.position.set(4,0,-0.005);
       walls.add(wall);
 
       vertex = [0,0,7,0,7,3.1,0,3.1,0,0];
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",7,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",7,3);
       wall.position.set(1,0,11);
       walls.add(wall);
 
       vertex = [0,0,2.01,0,2.01,3.1,0,3.1,0,0];
       hole = [0.705,1.1,1.305,1.1,1.305,2.1,0.705,2.1,0.705,1.1];
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",2,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",2,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(0,0,4.995);
       walls.add(wall);
@@ -300,7 +300,7 @@ function load_walls()
       holes.push(hole);
       hole = [2.5,1.1,3.5,1.1,3.5,2.1,2.5,2.1,2.5,1.1];
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",4,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",4,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(1,0,7);
       walls.add(wall);
@@ -309,20 +309,20 @@ function load_walls()
       hole = [1.1,1.1,3.1,1.1,3.1,2.4,1.1,2.4,1.1,1.1];
       holes = new Array();
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",4,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",4,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(9.005,0,0);
       walls.add(wall);
 
       vertex = [0,0,3.7,0,3.7,1.1,0,1.1,0,0];
       holes = new Array();
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",4,1);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",4,1);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(8.8,0,4.1);
       walls.add(wall);
 
       vertex = [0,0,3.9,0,3.9,1.1,0,1.1,0,0];
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",4,1);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",4,1);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(9.005,0,4.105);
       walls.add(wall);
@@ -333,30 +333,45 @@ function load_walls()
       holes.push(hole);
       hole = [0.5,0,1.3,0,1.3,2.5,0.5,2.5,0.5,0];
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",4,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",4,3);
       wall.rotation.y = -Math.PI/2;
       wall.position.set(8.005,0,4.1);
       walls.add(wall);
 
       vertex = [0,0,1,0,1,1.1,0,1.1,0,0];
       holes = new Array();
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",1,1);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",1,1);
       wall.position.set(8,0,8.0025);
       walls.add(wall);
 
       vertex = [0,0,0.8,0,0.8,1.1,0,1.1,0,0];
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",1,1);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",1,1);
       wall.position.set(8,0,7.795);
       walls.add(wall);
 
       vertex = [0,0,1,0,1,3.1,0,3.1,0,0];
       hole = [0.8,0,1,0,1,1.1,0.8,1.1,0.8,0];
       holes.push(hole);
-      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern.jpg",1,3);
+      wall = createShapeGeometry(vertex,holes,0.005,"wall_extern.jpg","wall_extern_bump.jpg",1,3);
       wall.position.set(8,0,4.1);
       walls.add(wall);
 
+      vertex = [1.995,0.995,1.995,3.995,-0.005,3.995,-0.005,4.5,11.005,4.5,11.005,0.995,7.005,0.995,7.005,-0.005,4.995,-0.005,4.995,0.995,1.995,0.995]
+      holes = new Array();
+      var tetto1 = createShapeGeometry(vertex,holes,0.1,"tetto.jpg","tetto_bump.jpg",1,1);
+      vertex = [-0.005,4.5,-0.005,9.005,4.105,9.005,4.105,8.005,11.005,8.005,11.005,4.5,-0.005,4.5];
+      var tetto2 = createShapeGeometry(vertex,holes,0.1,"tetto_reverse.jpg","tetto_reverse_bump.jpg",1,1);
+      var tetto = new THREE.Object3D();
+      tetto.add(tetto1);
+      tetto.add(tetto2);
+      tetto.rotation.x = -Math.PI/2;
+      tetto.rotation.z = -Math.PI/2;
+      tetto.position.set(0,3.1,0);
+      walls.tetto = tetto;
+   
+
       return walls;
  }
+
 
  

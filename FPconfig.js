@@ -7,7 +7,6 @@
 
           if ( document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element ) {
             controls.enabled = true;
-         //   camera.position.set(0,0,0);
             controls.getObject().position.set(0, 0, 0);
             
           } else {
@@ -50,7 +49,6 @@
         
         sphere.position.set(0,0,-2);
         camera.add(sphere);
-      //  scene.add(sphere);
         camera.position.set(0,0,0);
         
         controls = new THREE.PointerLockControls( camera );
