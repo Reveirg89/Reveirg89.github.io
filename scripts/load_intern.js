@@ -149,7 +149,7 @@ var	video = document.createElement( 'video' );
   movieScreen.isOn = false;
   movieScreen.video = video;
   movieScreen.interact = function()
-  {
+  { console.log("tv");
     if (this.isOn)
     {
       console.log("acceso");
