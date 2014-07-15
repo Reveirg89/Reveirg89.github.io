@@ -235,7 +235,7 @@ function load_accessory(sx,sy,sz)
 
       var geometry = new THREE.SphereGeometry(20*sx, 30, 30);
       
-      var texture = THREE.ImageUtils.loadTexture("assets/textures/general/panorama.jpg");
+      var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/panorama.jpg");
       var material = new THREE.MeshPhongMaterial({ map: texture, side: THREE.BackSide });
 
       var env = new THREE.Mesh(geometry, material);
@@ -321,7 +321,7 @@ function load_accessory(sx,sy,sz)
      oggetto.add(object); 
       
   });
- loader.load('models/'+model+'.obj', 'models/'+model+'.mtl', {side: THREE.DoubleSide});
+ loader.load('scripts/models/'+model+'.obj', 'scripts/models/'+model+'.mtl', {side: THREE.DoubleSide});
  return oggetto;
  }
 
@@ -329,7 +329,7 @@ function load_model_nomaterial(model,sx,sy,sz,color)
 {
   var loader = new THREE.OBJLoader();
   var object = new THREE.Object3D();
-  loader.load("models/"+model+".obj", function (obj) {
+  loader.load("scripts/models/"+model+".obj", function (obj) {
       global_o = obj;
       var material = new THREE.MeshLambertMaterial({color: color, side: THREE.DoubleSide});
       var o = new THREE.Mesh(obj.children[0].geometry, material);

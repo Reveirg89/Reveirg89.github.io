@@ -60,7 +60,7 @@ function createShapeGeometry(vertex,holes,extrusion,texture,texture_bump,repx,re
         var myGeometry = new THREE.ShapeGeometry(shape);
         var geometry = new THREE.ExtrudeGeometry( shape,extrudeSettings);
         assignUV(geometry);
-        var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+texture);
+        var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+texture);
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping; 
         texture.repeat.set( repx, repy );
         texture.needsUpdate = true;
@@ -68,7 +68,7 @@ function createShapeGeometry(vertex,holes,extrusion,texture,texture_bump,repx,re
         var myMaterial = new THREE.MeshPhongMaterial({map:texture});
         if(texture_bump)
         {
-        var bump = THREE.ImageUtils.loadTexture("assets/textures/general/" + texture_bump)
+        var bump = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + texture_bump)
         bump.wrapS = bump.wrapT = THREE.RepeatWrapping; 
         bump.repeat.set( repx, repy );
         bump.needsUpdate = true;

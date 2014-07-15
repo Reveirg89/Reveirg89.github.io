@@ -16,7 +16,7 @@ Types =
 			angleVelocityBase : 0,
 			angleVelocitySpread : 60,
 
-			particleTexture : THREE.ImageUtils.loadTexture( './assets/textures/general/snowflake.png' ),
+			particleTexture : THREE.ImageUtils.loadTexture( 'scripts/assets/textures/general/snowflake.png' ),
 
 			sizeTween : new Tween( [0, 0.25], [1, 10] ),
 			colorBase : new THREE.Vector3(0.66, 1.0, 0.9), // H,S,L

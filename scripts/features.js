@@ -9,7 +9,7 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
       var l_door = length - (2*l_cardini);
 	    var doorGeometry = new THREE.BoxGeometry(l_door,h_door,w_door);
 	    var cardinGeometry = new THREE.BoxGeometry(l_cardini,width,h_cardin);
-      var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+ border);
+      var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ border);
 	    var cardinMaterial = new THREE.MeshPhongMaterial({map: texture});
       var doorMaterial = new THREE.MeshLambertMaterial({color: 0xff00ff});
       var intern = createMesh(doorGeometry,image,bump,border,imageRetro,bumpRetro);
@@ -63,9 +63,9 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
         }
       }
       function createMesh(geom, imageFile, bump,imgborder,imageRetro,bumpRetro) {
-        var texture = THREE.ImageUtils.loadTexture("assets/textures/general/" + imageFile);
-        var textureRetro = THREE.ImageUtils.loadTexture("assets/textures/general/"+ imageRetro);
-        var texborder = THREE.ImageUtils.loadTexture("assets/textures/general/"+imgborder);
+        var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + imageFile);
+        var textureRetro = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ imageRetro);
+        var texborder = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+imgborder);
             geom.computeVertexNormals();
              var materialArray = [];
               materialArray.push(new THREE.MeshPhongMaterial({ map: texborder }));
@@ -79,8 +79,8 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
               materialArray.push(new THREE.MeshPhongMaterial({ map: texborder }));
 
             if (bump) {
-                var bump = THREE.ImageUtils.loadTexture("assets/textures/general/" + bump);
-                var bumpRetro = THREE.ImageUtils.loadTexture("assets/textures/general/"+ bumpRetro);
+                var bump = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + bump);
+                var bumpRetro = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ bumpRetro);
                 materialArray[4].bumpMap = bump;
                 materialArray[4].bumpScale = 0.1;
                 materialArray[5].bumpMap = bumpRetro;
@@ -96,7 +96,7 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
 }
 
 function createMesh(geom, imageFile, bump,repx,repy) {
-        var texture = THREE.ImageUtils.loadTexture("assets/textures/general/" + imageFile)
+        var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + imageFile)
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping; 
         texture.repeat.set( repx, repy );
         texture.needsUpdate = true;
@@ -112,7 +112,7 @@ function createMesh(geom, imageFile, bump,repx,repy) {
               materialArray.push(new THREE.MeshBasicMaterial({ color: 0xffffff }));
 
             if (bump) {
-                var bump = THREE.ImageUtils.loadTexture("assets/textures/general/" + bump)
+                var bump = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + bump)
                 bump.wrapS = bump.wrapT = THREE.RepeatWrapping; 
                 bump.repeat.set( repx, repy );
                 bump.needsUpdate = true;
@@ -139,7 +139,7 @@ function createWindow(hight,width,length,texture_infix,opener)
     var l_window = length - (2*l_cardini);
     var windowGeometry = new THREE.BoxGeometry(l_window,hight,w_window);
     var cardinGeometry = new THREE.BoxGeometry(l_cardini,width,hight);
-    var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+ texture_infix);
+    var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ texture_infix);
     var cardinMaterial = new THREE.MeshPhongMaterial({map: texture});
     var windowMaterial = new THREE.MeshLambertMaterial({color: 0xffffff,opacity: 0.3,transparent: true});
     var intern = new THREE.Mesh(windowGeometry,windowMaterial);
@@ -286,7 +286,7 @@ function create_wardrobe(sx,sy,sz,h,w,l,texture_left,texture_right,texture_wardr
   var telaio = create_cassettiera(h-h_sportello2,w_sportello,l_sportello,"wardrobe_left.jpg","wardrobe.jpg");
   telaio.position.set(0,-(h-h_sportello2)/2+(h/2-h_sportello2),4*l_sportello);
   var deskGeometry = new THREE.BoxGeometry(w_sportello,h/60,2*l_sportello);
-  var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+ texture_wardrobe);
+  var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ texture_wardrobe);
   var deskMaterial = new THREE.MeshPhongMaterial({map:texture});
   var desk = new THREE.Mesh(deskGeometry,deskMaterial);
   desk.position.set(0,-h/4,2.5*l_sportello);
@@ -313,8 +313,8 @@ function create_sportello(h,w,l,left,texture,texture_wardrobe,bump)
   var width = w/10;
   var l2 = l-width;
   var boxGeometry = new THREE.BoxGeometry(width,h,l2);
-  var texture_s = THREE.ImageUtils.loadTexture("assets/textures/general/" + texture);
-  var texture_w = THREE.ImageUtils.loadTexture("assets/textures/general/" + texture_wardrobe);
+  var texture_s = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + texture);
+  var texture_w = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/" + texture_wardrobe);
   boxGeometry.computeVertexNormals();
   var materialArray = [];
   materialArray.push(new THREE.MeshPhongMaterial({ map: texture_w }));
@@ -396,7 +396,7 @@ function create_cassetto(h,w,l,texture)
  
   var cassetto1Geometry = new THREE.BoxGeometry(w,h_cassetto1,l_cassetto1);
   var cassetto2Geometry = new THREE.BoxGeometry(w,h_cassetto2,l_cassetto2);
-  var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+ texture);
+  var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ texture);
   var cassettoMaterial = new THREE.MeshPhongMaterial({map:texture});
 
   var c1 = new THREE.Mesh(cassetto1Geometry,cassettoMaterial);
@@ -433,7 +433,7 @@ function create_cassetto_vuoto(h,w,l,texture)
  
   var cassetto1Geometry = new THREE.BoxGeometry(w,h_cassetto1,l_cassetto1);
   var cassetto2Geometry = new THREE.BoxGeometry(w,h_cassetto2,l_cassetto2);
-  var texture = THREE.ImageUtils.loadTexture("assets/textures/general/"+ texture);
+  var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+ texture);
   var cassettoMaterial = new THREE.MeshPhongMaterial({map:texture});
 
   var c1 = new THREE.Mesh(cassetto1Geometry,cassettoMaterial);
@@ -494,8 +494,8 @@ function create_cassetto_cassettiera(h,w,l,texture_cassetto,texture, texture_int
   var cassettoDGeometry = new THREE.BoxGeometry(l_cassetto1,h,l_davanti);
   var cassettoSottoGeometry = new THREE.BoxGeometry(width,h/20,l_cassetto2);
 
-  var texture_c = THREE.ImageUtils.loadTexture("assets/textures/general/"+texture);
-  var texture_d = THREE.ImageUtils.loadTexture("assets/textures/general/"+texture_cassetto);
+  var texture_c = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+texture);
+  var texture_d = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/"+texture_cassetto);
   var cassettoMaterial = new THREE.MeshPhongMaterial({map:texture_c});
   var davantiMaterial = new THREE.MeshPhongMaterial({map:texture_d});
 
