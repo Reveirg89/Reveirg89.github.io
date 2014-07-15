@@ -133,6 +133,7 @@ function load_accessory(sx,sy,sz)
 
     var $video = $('#video');
     var video = $video[0];
+    video.pause();
     var videotexture = new THREE.Texture(video);
     videotexture.minFilter = THREE.LinearFilter;
     videotexture.magFilter = THREE.LinearFilter;
