@@ -239,7 +239,7 @@ var	video = document.createElement( 'video' );
       ca.rotation.y = -Math.PI/2;
       ca.position.set(6.75*sx,0.9*sy,10.5*sz);
 
-      var geometry = new THREE.SphereGeometry(20*sx, 30, 30);
+      
       
       
 
