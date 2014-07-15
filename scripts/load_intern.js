@@ -148,23 +148,25 @@ var	video = document.createElement( 'video' );
   movieScreen.position.set(6.5*sx,1.03*sy,0.94*sz);
   movieScreen.isOn = false;
   movieScreen.video = video;
-  movieScreen.interact = function()
+
+  tv.movieScreen = movieScreen;
+  tv.interact = function()
   { console.log("tv");
-    if (this.isOn)
+    if (this.movieScreen.isOn)
     {
       console.log("acceso");
-      this.video.pause();
-      this.video.currentTime = 0;
-      this.isOn = false;
+      this.movieScreen.video.pause();
+      this.movieScreen.video.currentTime = 0;
+      this.movieScreen.isOn = false;
     }
     else
     {
       console.log("spento");
-      this.video.play();
-      this.isOn = true;
+      this.movieScreen.video.play();
+      this.movieScreen.isOn = true;
     }
   }
-  oggetti.push(movieScreen);
+  oggetti.push(tv);
  
 
     var wc = load_model("/wc/wc",0.15*sx,0.2*sy,0.2*sz,0xffffff);
