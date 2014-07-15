@@ -152,14 +152,14 @@ var	video = document.createElement( 'video' );
   { console.log("tv");
     if (this.isOn)
     {
-      console.log("acceso");
+      this.video.hide();
       this.video.pause();
       this.video.currentTime = 0;
       this.isOn = false;
     }
     else
     {
-      console.log("spento");
+      this.video.show();
       this.video.play();
       this.isOn = true;
     }
@@ -241,10 +241,7 @@ var	video = document.createElement( 'video' );
 
       var geometry = new THREE.SphereGeometry(20*sx, 30, 30);
       
-      var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/panorama.jpg");
-      var material = new THREE.MeshPhongMaterial({ map: texture, side: THREE.BackSide });
-
-      var env = new THREE.Mesh(geometry, material);
+      
 
       var mirror = createMirror(0.5*sx,0.005*sy,0.8*sz);
       mirror.position.set(3*sx,1.9*sy,2.205*sz);
@@ -274,7 +271,6 @@ var	video = document.createElement( 'video' );
 
       arredo.add(frame);
       arredo.add(ca);
-      arredo.add(env);
       arredo.add(mirror);
 
       arredo.add(w_machine);
