@@ -160,7 +160,7 @@ var	video = document.createElement( 'video' );
       this.video.play();
     }
   }
- // oggetti.push(movieScreen);
+  oggetti.push(movieScreen);
  
 
     var wc = load_model("/wc/wc",0.15*sx,0.2*sy,0.2*sz,0xffffff);
