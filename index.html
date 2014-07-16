@@ -73,12 +73,7 @@
       home = load_models(2,2,2);   
        
       scene.add(home);
-      var geometry = new THREE.SphereGeometry(50, 30, 30);
-      var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/panorama.jpg");
-      var material = new THREE.MeshPhongMaterial({ map: texture, side: THREE.BackSide });
-
-      var env = new THREE.Mesh(geometry, material);
-      scene.add(env);
+    
 
   
       trackballControls = new THREE.TrackballControls(camera);

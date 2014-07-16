@@ -44,12 +44,12 @@ function create_door(hight,width,length,image,bump,border,imageRetro,bumpRetro,o
       if(opener)
       {
         intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:Math.PI/2,y:0},2000).easing(TWEEN.Easing.Bounce.Out);
-        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},2000);
+        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},1000);
       }
       else
       {
         intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:-Math.PI/2,y:0},2000).easing(TWEEN.Easing.Bounce.Out);
-        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},2000);
+        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},1000);
       }
       intern.interact = function(){
         if (this.isclosed)
@@ -182,13 +182,13 @@ function createWindow(hight,width,length,texture_infix,opener)
       intern.isclosed = true;
       if(opener)
       {
-        intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:-Math.PI/6,y:0},2000).easing(TWEEN.Easing.Bounce.Out);
-        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},2000);
+        intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:-Math.PI/6,y:0},2000).easing(TWEEN.Easing.Back.In);
+        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},1000);
       }
       else
       {
-        intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:+Math.PI/6,y:0},2000).easing(TWEEN.Easing.Bounce.Out);
-        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},2000);
+        intern.tweenOpen = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:+Math.PI/6,y:0},2000).easing(TWEEN.Easing.Back.In);
+        intern.tweenClose = new TWEEN.Tween(intern.pivot.rotation).to({x:0,z:0,y:0},1000);
       }
       intern.interact = function()
       {
@@ -227,8 +227,8 @@ function create_interructor(sx,sy,sz)
   base.add(spotLight1);
 
   base.light = spotLight1;
-  base.tweenOpen = new TWEEN.Tween(interruttore.rotation).to({x:Math.PI/8,z:0,y:0},2000);
-  base.tweenClose = new TWEEN.Tween(interruttore.rotation).to({x:-Math.PI/8,z:0,y:0},2000);
+  base.tweenOpen = new TWEEN.Tween(interruttore.rotation).to({x:Math.PI/8,z:0,y:0},500);
+  base.tweenClose = new TWEEN.Tween(interruttore.rotation).to({x:-Math.PI/8,z:0,y:0},500);
   base.interact = function()
   {
     if (this.interruttore.isclosed)
@@ -353,8 +353,8 @@ var sportello = new THREE.Mesh(boxGeometry, faceMaterial);
   
   sportello.isOpen = false;
   sportello.hook = hook;
-  sportello.tweenOpen = new TWEEN.Tween(hook.rotation).to({x:0,z:0,y:sportello.r},2000).easing(TWEEN.Easing.Bounce.Out);
-  sportello.tweenClose = new TWEEN.Tween(hook.rotation).to({x:0,z:0,y:0},2000);
+  sportello.tweenOpen = new TWEEN.Tween(hook.rotation).to({x:0,z:0,y:sportello.r},2000).easing(TWEEN.Easing.Exponential.InOut);
+  sportello.tweenClose = new TWEEN.Tween(hook.rotation).to({x:0,z:0,y:0},1000);
   sportello.interact = function()
   {
     if(this.isOpen)
@@ -525,8 +525,8 @@ function create_cassetto_cassettiera(h,w,l,texture_cassetto,texture, texture_int
   cs.position.set(0,-h/2+h/40,0);
   d.isOpen = false
   d.l = l_cassetto2;
-  d.tweenOpen = new TWEEN.Tween(d.cassetto.position).to({x:-l/4},2000).easing(TWEEN.Easing.Bounce.Out);
-  d.tweenClose = new TWEEN.Tween(d.cassetto.position).to({x:-w/20},2000);
+  d.tweenOpen = new TWEEN.Tween(d.cassetto.position).to({x:-l/4},2000).easing(TWEEN.Easing.Circular.InOut);
+  d.tweenClose = new TWEEN.Tween(d.cassetto.position).to({x:-w/20},1000);
   
   d.interact = function()
   {

@@ -148,18 +148,19 @@ var	video = document.createElement( 'video' );
   movieScreen.position.set(6.5*sx,1.03*sy,0.94*sz);
   movieScreen.isOn = false;
   movieScreen.video = video;
+  movieScreen.visible = false;
   movieScreen.interact = function()
   { console.log("tv");
     if (this.isOn)
     {
-      this.video.hide();
+      this.visible = false;
       this.video.pause();
       this.video.currentTime = 0;
       this.isOn = false;
     }
     else
     {
-      this.video.show();
+      this.visible = true;
       this.video.play();
       this.isOn = true;
     }
@@ -195,6 +196,13 @@ var	video = document.createElement( 'video' );
     var freezer = load_model("/refridgerator/refridgerator",sx,sy,sz,0xffffff);
     freezer.position.set(2.2*sx,0.5*sy,10.795);
     freezer.rotation.y = Math.PI;
+    
+      var geometry = new THREE.SphereGeometry(50*sx, 30, 30);
+      var texture = THREE.ImageUtils.loadTexture("scripts/assets/textures/general/panorama.jpg");
+      var material = new THREE.MeshPhongMaterial({ map: texture, side: THREE.BackSide });
+
+      var env = new THREE.Mesh(geometry, material);
+      
 
 
 
@@ -271,6 +279,7 @@ var	video = document.createElement( 'video' );
 
       arredo.add(frame);
       arredo.add(ca);
+      arredo.add(env);
       arredo.add(mirror);
 
       arredo.add(w_machine);
